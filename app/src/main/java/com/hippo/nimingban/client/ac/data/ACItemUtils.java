@@ -138,7 +138,7 @@ public final class ACItemUtils {
                 continue;
             }
 
-            URLSpan urlSpan = new URLSpan("http://www.acfun.tv/v/" + m.group(0));
+            URLSpan urlSpan = new URLSpan("http://www.acfun.cn/v/" + m.group(0));
             spannable.setSpan(urlSpan, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
@@ -264,9 +264,9 @@ public final class ACItemUtils {
                     String href = attributes.getValue("", "href");
                     if (!href.startsWith("http")) {
                         if (href.startsWith("/")){
-                            href = ACUrl.HOST + href;
+                            href = ACUrl.getHost() + href;
                         } else {
-                            href = ACUrl.HOST + '/' + href;
+                            href = ACUrl.getHost() + '/' + href;
                         }
                     }
                     int len = output.length();
